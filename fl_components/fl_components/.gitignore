@@ -44,5 +44,5 @@ app.*.map.json
 /android/app/release
 
 #flutter projects
-/**/build/app/apk
-/**/build/app/flutter-apk
+/**/app/apk
+/**/app/flutter-apk
