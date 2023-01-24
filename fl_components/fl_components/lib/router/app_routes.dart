@@ -50,6 +50,7 @@ class AppRoutes {
   //   'card': (BuildContext context) => const CardScreen(),
   // };
 
+  // ignore: non_constant_identifier_names
   static Route<dynamic> OnGenerateRoute(RouteSettings settings) {
     return MaterialPageRoute(builder: (context) => const AlertScreen());
   }
