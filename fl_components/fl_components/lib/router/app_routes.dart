@@ -4,11 +4,11 @@ import 'package:fl_components/screens/screens.dart';
 class AppRoutes {
   static const initialRoute = 'home';
   static final menuOptions = <MenuOption>[
-    MenuOption(
+    /* MenuOption(
         route: 'home',
         icon: Icons.home,
         name: 'HomeScreen',
-        screen: const HomeScreen()),
+        screen: const HomeScreen()), */
     MenuOption(
         route: 'listview1',
         icon: Icons.list_rounded,
@@ -28,12 +28,28 @@ class AppRoutes {
         route: 'card',
         icon: Icons.calculate_rounded,
         name: 'Card Screen',
-        screen: const CardScreen())
+        screen: const CardScreen()),
+    MenuOption(
+        route: 'avatar',
+        icon: Icons.supervised_user_circle_outlined,
+        name: 'Avatar Screen',
+        screen: const AvatarScreen()),
+    MenuOption(
+        route: 'Animated',
+        icon: Icons.play_circle_outline_rounded,
+        name: 'Animated Screen',
+        screen: const AnimatedScreen()),
+    MenuOption(
+        route: 'Inputs',
+        icon: Icons.input_outlined,
+        name: 'Inputs Screen',
+        screen: const InputsScreen())
   ];
 
   static Map<String, Widget Function(BuildContext context)> getAppRoutes() {
     Map<String, Widget Function(BuildContext context)> appRoutes = {};
 
+    appRoutes.addAll({'home': (BuildContext context) => const HomeScreen()});
     for (final option in menuOptions) {
       //clave para anadir todas las rutas a la approutes
       appRoutes.addAll({option.route: (BuildContext context) => option.screen});
