@@ -37,6 +37,13 @@ class AppTheme {
           elevation: 0,
         )
       ),
+
+
+      inputDecorationTheme: const InputDecorationTheme(
+        
+      )
+
+
       
 
 
