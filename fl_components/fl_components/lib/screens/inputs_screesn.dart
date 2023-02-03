@@ -1,4 +1,8 @@
+import 'package:fl_components/validators/validators.dart';
 import 'package:flutter/material.dart';
+
+import '../widgets/custom_input_field.dart';
+
 
 class InputsScreen extends StatelessWidget {
   const InputsScreen({Key? key}) : super(key: key);
@@ -10,35 +14,25 @@ class InputsScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-          child: Column(
-            children: [
-              TextFormField(
-                  autofocus: true,
-                  initialValue: null,
-                  textCapitalization: TextCapitalization.words,
-                  onChanged: (value) => print(value),
-                  autovalidateMode: AutovalidateMode.onUserInteraction,
-                  validator: (value) {
-                    if (value == null) return 'Este campo es requerido';
-                    return value.length < 3 ? 'Minimo 3 caracteres' : null;
-                  },
-                  decoration: const InputDecoration(
-                      hintText: 'Nombre del usuario', 
-                      labelText: 'Nombre',
-                      helperText: "Solo letras",
-                      prefixIcon: Icon(Icons.verified),
-                      suffixIcon: Icon(Icons.group),
-                      icon: Icon(Icons.ac_unit),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(10),
-                          topRight: Radius.circular(10)
-                        )
-                      )
+          child:  Column(
+
+            children:const    [
+                  CustomInputField(
+                  labelText: " cedula",
+                  message: "Cedula",
+                  helperText: " cedula de identidad",
+                  fun:Validators.validateCed),
+                  SizedBox(
+                    height: 20,
+                  
                   ),
-                      
-                      ),
-                      
+                  CustomInputField(
+                  labelText: " Nombre",
+                  message: "Nombre",
+                  helperText: " Nombre",
+                  fun: Validators.validateName),
+                
+                
             ],
           ),
         ),
@@ -46,3 +40,4 @@ class InputsScreen extends StatelessWidget {
     );
   }
 }
+
